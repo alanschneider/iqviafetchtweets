@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IqviaFetchTweets", "IqviaFetchTweets\IqviaFetchTweets.csproj", "{2B893EC0-BA52-44CD-AF39-D11C335D85E9}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1210464E-CC49-4D66-AA87-DD4F6CF919E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IqviaFetchTweets.Tests", "IqviaFetchTweets.Tests\IqviaFetchTweets.Tests.csproj", "{29065C4B-646B-44B9-A03B-A8B2EAACE927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IqviaFetchTweets.OldApi", "IqviaFetchTweets.OldApi\IqviaFetchTweets.OldApi.csproj", "{D8B9BFFF-467B-4622-9C04-F7A70056A8E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B893EC0-BA52-44CD-AF39-D11C335D85E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B893EC0-BA52-44CD-AF39-D11C335D85E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B893EC0-BA52-44CD-AF39-D11C335D85E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B893EC0-BA52-44CD-AF39-D11C335D85E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1210464E-CC49-4D66-AA87-DD4F6CF919E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1210464E-CC49-4D66-AA87-DD4F6CF919E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1210464E-CC49-4D66-AA87-DD4F6CF919E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1210464E-CC49-4D66-AA87-DD4F6CF919E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29065C4B-646B-44B9-A03B-A8B2EAACE927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29065C4B-646B-44B9-A03B-A8B2EAACE927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29065C4B-646B-44B9-A03B-A8B2EAACE927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29065C4B-646B-44B9-A03B-A8B2EAACE927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B9BFFF-467B-4622-9C04-F7A70056A8E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B9BFFF-467B-4622-9C04-F7A70056A8E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B9BFFF-467B-4622-9C04-F7A70056A8E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B9BFFF-467B-4622-9C04-F7A70056A8E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4EEE9A0-5943-4F9B-A04C-CD9C1D787F5C}
+	EndGlobalSection
+EndGlobal
