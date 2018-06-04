@@ -15,6 +15,9 @@ namespace IqviaFetchTweets.Services
             MaxYearsIntoPast = maxYearsBack;
         }
 
+        /// <summary>
+        /// Max number of years to go back when retreiving tweets.
+        /// </summary>
         public int MaxYearsIntoPast { get; }
     }
 }

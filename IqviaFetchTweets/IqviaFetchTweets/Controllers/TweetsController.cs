@@ -15,12 +15,23 @@ namespace IqviaFetchTweets.Controllers
         private readonly ITweetsSettings _settings;
         private readonly IOldApi _oldApi;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="settings">Instance of ITweetsSettings.</param>
+        /// <param name="oldApi">Instance of IOldApi.</param>
         public TweetsController(ITweetsSettings settings, IOldApi oldApi)
         {
             _settings = settings;
             _oldApi = oldApi;
         }
 
+        /// <summary>
+        /// Validates that a date/time object is valid for this controller.
+        /// Throws a BadRequestException if the validation fails.
+        /// </summary>
+        /// <param name="dt">DateTime instance</param>
+        /// <param name="dtName">Name of DateTime instance.</param>
         private void ThrowIfNotInValidDateRange(DateTime dt, string dtName)
         {
             var minDate = DateTime.UtcNow.AddYears(-_settings.MaxYearsIntoPast);
@@ -34,18 +45,15 @@ namespace IqviaFetchTweets.Controllers
                 throw new BadRequestException($"Cannot retrieve records before {minDate}. Specify a later date/time for {dtName}.");
         }
 
-        //[HttpGet]
-        //public IEnumerable<string> Get([FromQuery] DateTime startDate,
-        //                               [FromQuery] DateTime endDate)
-        //{
-        //    ThrowIfNotInValidDateRange(startDate, "startDate");
-        //    ThrowIfNotInValidDateRange(endDate, "endDate");
-        //    if (startDate > endDate)
-        //        throw new BadRequestException("endDate must be greater than startDate.");
-
-        //    return new[] { startDate.ToUniversalTime().ToString("O"), endDate.ToUniversalTime().ToString("O") };
-        //}
-
+        /// <summary>
+        /// Returns all unique tweets from a given date range. 
+        /// </summary>
+        /// <param name="startDate">Starting date range. The number of years 
+        /// back is capped in the config file, so a startDate that precedes 
+        /// this will throw an exception.
+        /// </param>
+        /// <param name="endDate">Ending date range. Must be less than the current date/time.</param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IEnumerable<string>> Get([FromQuery] DateTime startDate,
             [FromQuery] DateTime endDate)
@@ -55,9 +63,7 @@ namespace IqviaFetchTweets.Controllers
             if (startDate >= endDate)
                 throw new BadRequestException("endDate must be greater than startDate.");
 
-            var results = await _oldApi.GetUniqueTweets(startDate, endDate);
-            return results;
-            //return new[] { startDate.ToUniversalTime().ToString("O"), endDate.ToUniversalTime().ToString("O") };
+            return await _oldApi.GetUniqueTweets(startDate, endDate);
         }
     }
 }

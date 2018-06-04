@@ -8,7 +8,9 @@ using Newtonsoft.Json;
 
 namespace IqviaFetchTweets.Middleware
 {
-    // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
+    /// <summary>
+    /// Customized middleware to send back errors in JSON format.
+    /// </summary>
     public class HttpErrorMiddleware
     {
         private readonly RequestDelegate _next;
@@ -34,6 +36,9 @@ namespace IqviaFetchTweets.Middleware
         {
             var code = HttpStatusCode.InternalServerError; // 500 if unexpected
 
+            // This is highly simplified. Other types of 4xx exceptions would
+            // need to be added to this...
+            //
             if (exception is BadRequestException)
                 code = HttpStatusCode.BadRequest;
 
